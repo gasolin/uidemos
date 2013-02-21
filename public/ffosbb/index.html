@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>FirefoxOS UI Demos</title>
+  <link rel="stylesheet" type="text/css" href="shared/style/headers.css">
+  <link rel="stylesheet" type="text/css" href="shared/style_unstable/lists.css">
+  <link rel="stylesheet" href="/public/lib/font-awesome/css/font-awesome.min.css">
+<!--[if IE 7]>
+  <link rel="stylesheet" href="/public/lib/font-awesome/css/font-awesome-ie7.min.css">
+<![endif]-->
+  <style type="text/css">
+    html, body {
+      margin: 0;
+      padding: 0;
+      font-size: 10px;
+      background-color: #fff;
+    }
+    body {
+      background: none;
+    }
+    section[role="region"] {
+      margin-bottom: 1.5rem;
+      position: relative;
+    }
+  </style>
+  <!--style>
+/* State tagged */
+body li[data-state="tagged"]:after  {
+  content: "";
+  position: absolute;
+  left: 0px;
+  top: -1px;
+  bottom: 0;
+  width: 0.4rem;
+}
+
+body li[data-tag="A"]:after { background-color: #e7a300; }
+body li[data-tag="B"]:after { background-color: #954fa7; }
+body li[data-tag="C"]:after { background-color: green; }
+body li[data-tag="D"]:after { background-color: blue; }
+  </style-->
+</head>
+<body role="application">
+<!-- header -->
+<section role="region">
+	<header>
+	<menu type="toolbar">
+	<!--a href="#"><span class="icon icon-edit">edit</span></a>
+	<a href="#"><span class="icon icon-send">Send</span></a-->
+	</menu>
+	<h1><i class="icon-beaker"></i> UI Demos</h1>
+	</header>
+	<header>
+      <h2>Building Blocks of Firefox OS</h2>
+    </header>
+</section>
+<!-- list -->
+<section data-type="list">	
+	<header>Headers</header>
+	<ul>
+		<li data-state="tagged" data-tag="A"><a href="shared/style/headers/findex.html"><p><i class="icon-pushpin"></i> Headers</p></a></li>
+		<li data-state="tagged" data-tag="A"><a href="shared/style_unstable/tabs/findex.html"><p><i class="icon-minus"></i> Tabs</p></a></li>
+		<li data-state="tagged" data-tag="A"><a href="shared/style_unstable/toolbars/findex.html"><p><i class="icon-wrench"></i> Toolbars</p></a></li>
+		<li data-state="tagged" data-tag="A"><a href="shared/style_unstable/drawer/findex.html"><p><i class="icon-reorder"></i> Drawer</p></a></li>
+	</ul>
+
+	<header>Forms</header>
+	<ul>
+		<li data-state="tagged" data-tag="B"><a href="shared/style/buttons/findex.html"><p><i class="icon-check-empty"></i> Buttons</p></a></li>
+		<li data-state="tagged" data-tag="B"><a href="shared/style_unstable/seekbars/findex.html"><p><i class="icon-resize-horizontal"></i> Seekbars</p></a></li>
+		<li data-state="tagged" data-tag="B"><a href="shared/style/input_areas/findex.html"><p><i class="icon-text-width"></i> Input Areas</p></a></li>
+		<li data-state="tagged" data-tag="B"><a href="shared/style/switches/findex.html"><p><i class="icon-adjust"></i> Switches</p></a></li>
+		<li data-state="tagged" data-tag="B"><a href="shared/style_unstable/lists/findex.html"><p><i class="icon-th-list"></i> Lists</p></a></li>
+		<li data-state="tagged" data-tag="B"><a href="shared/style_unstable/scrolling/findex.html"><p><i class="icon-sort"></i> Scrolling</p></a></li>
+	</ul>
+
+	<header>Dialogs</header>
+	<ul>
+		<li data-state="tagged" data-tag="C"><a href="shared/style/confirm/findex.html"><p><i class="icon-ok"></i> Confirm</p></a></li>
+		<li data-state="tagged" data-tag="C"><a href="shared/style/edit_mode/findex.html"><p><i class="icon-pencil"></i> Edit Mode</p></a></li>
+		<li data-state="tagged" data-tag="C"><a href="shared/style/action_menu/findex.html"><p><i class="icon-list-alt"></i> Action Menu</p></a></li>
+	</ul>
+
+	<header>Status</header>
+	<ul>
+		<li data-state="tagged" data-tag="D"><a href="shared/style/status/findex.html"><p><i class="icon-info-sign"></i> Status</p></a></li>
+		<li data-state="tagged" data-tag="D"><a href="shared/style_unstable/progress_activity/findex.html"><p><i class="icon-spinner"></i> Progress and Activity</p></a></li>
+	</ul>
+</section>
+<script type="text/javascript">
+//check if app is installed
+//var manifestUrl='http://ffos.ap01.aws.af.cm/public/ffosbb/manifest.webapp';
+var manifestUrl = location.href.substring(0, location.href.lastIndexOf('/'))+'/manifest.webapp';
+// alert(manifestUrl);
+var app_stat = navigator.mozApps.getSelf();
+app_stat.onsuccess = function() {
+	if (app_stat.result) {
+        //instsalled
+        // alert('installed');
+	} else {
+        // not installed
+        var app_install = navigator.mozApps.install(manifestUrl);
+        app_install.onsuccess = function() {
+          // alert('install success');
+        };
+        app_install.onerror = function() {
+          // alert('install fail');
+        };
+	}
+};
+app_stat.onerror = function() {
+	alert('Error checking installation status: '+ this.error.message);
+};
+</script>
+</body>
+</html>

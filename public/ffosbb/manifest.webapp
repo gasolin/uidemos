@@ -1,0 +1,16 @@
+{
+    "version": "0.4.1",
+    "name": "UI Demos",
+    "launch_path": "/public/ffosbb/index.html",
+    "description": "Firefox OS Building Block Demos with Source. merge http://buildingfirefoxos.com/ and https://wiki.mozilla.org/Gaia/Design/BuildingBlocks",
+    "icons":{
+        "64": "/public/ffosbb/icon64.png",
+        "128": "/public/ffosbb/icon128.png"
+    },
+    "developer": {
+        "name": "Fred Lin",
+        "url": "http://www.gasolin.idv.tw"
+    },
+    "installs_allowed_from": ["*"],
+    "default_locale": "en"
+}

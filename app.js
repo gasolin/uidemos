@@ -20,19 +20,27 @@ app.configure(function(){
     app.use("/public/lib", express.static(__dirname+'/components'));
 
     // mime
-    // express.static.mime.define({'text/plain': ['md']});
+    express.static.mime.define({'application/x-web-app-manifest+json': ['webapp']});
+    express.static.mime.define({'text/cache-manifest': ['appcache']});
+    // express.static.mime.define({'text/cache-manifest': ['manifest']});
+    // express.static.mime.define({'audio/ogg': ['ogg']});
+    // express.static.mime.define({'audio/mp4': ['m4a']});
 
     // error
     app.use(express.errorHandler({
-    dumpExceptions: true,
-    showStack: true
-  }));
+      dumpExceptions: true,
+      showStack: true
+    }));
 });
 
 // routes
 app.get('/', function(req, res) {
     // res.send('Hello from <a href="http://appfog.com">AppFog.com</a>');
-    res.render('index.html', {foo:'bar'});
+    res.render('index.html', {});
 });
 
-app.listen(process.env.VCAP_APP_PORT || 3000);
+// port
+var app_port = process.env.VCAP_APP_PORT || 8000;
+app.listen(app_port, function() {
+  console.log("Listening on " + app_port);
+});

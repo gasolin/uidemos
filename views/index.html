@@ -6,8 +6,28 @@
   {% parent %}
   <!--link rel="stylesheet" href="/public/css/custom.css"-->
   <!--script src="/public/js/custom.js"></script-->
+  <link rel="stylesheet" href="/public/lib/font-awesome/css/font-awesome.min.css">
+<!--[if IE 7]>
+  <link rel="stylesheet" href="/public/lib/font-awesome/css/font-awesome-ie7.min.css">
+<![endif]-->
 {% endblock %}
 
 {% block content %}
-<h1>Hello {{ foo }}</h1>
+<script>
+var manifestUrl='http://ffos.ap01.aws.af.cm/public/ffosbb/manifest.webapp';
+/*var request = window.navigator.mozApps.install(manifestUrl);
+request.onsuccess = function () {
+  // Save the App object that is returned
+  var appRecord = this.result;
+  alert('Installation successful!');
+};
+request.onerror = function () {
+  // Display the error information from the DOMError object
+  alert('Install failed, error: ' + this.error.name);
+};*/
+</script>
+
+<h1>Firefox OS Web Apps</h1>
+<i class="icon-beaker icon-2x"></i> <a href="/public/ffosbb/index.html">UI Demos</a> <button onclick="navigator.mozApps.install(manifestUrl); return false;">Install</button>
+
 {% endblock %}
