@@ -5,27 +5,13 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>FirefoxOS UI Demos</title>
+  <link rel="stylesheet" href="main.css">
   <link rel="stylesheet" type="text/css" href="shared/style/headers.css">
   <link rel="stylesheet" type="text/css" href="shared/style_unstable/lists.css">
   <link rel="stylesheet" href="/public/lib/font-awesome/css/font-awesome.min.css">
 <!--[if IE 7]>
   <link rel="stylesheet" href="/public/lib/font-awesome/css/font-awesome-ie7.min.css">
 <![endif]-->
-  <style type="text/css">
-    html, body {
-      margin: 0;
-      padding: 0;
-      font-size: 10px;
-      background-color: #fff;
-    }
-    body {
-      background: none;
-    }
-    section[role="region"] {
-      margin-bottom: 1.5rem;
-      position: relative;
-    }
-  </style>
   <!--style>
 /* State tagged */
 body li[data-state="tagged"]:after  {
@@ -95,6 +81,7 @@ body li[data-tag="D"]:after { background-color: blue; }
 //var manifestUrl='http://ffos.ap01.aws.af.cm/public/ffosbb/manifest.webapp';
 var manifestUrl = location.href.substring(0, location.href.lastIndexOf('/'))+'/manifest.webapp';
 // alert(manifestUrl);
+if( navigator.mozApps != undefined ){
 var app_stat = navigator.mozApps.getSelf();
 app_stat.onsuccess = function() {
 	if (app_stat.result) {
@@ -114,6 +101,7 @@ app_stat.onsuccess = function() {
 app_stat.onerror = function() {
 	alert('Error checking installation status: '+ this.error.message);
 };
+}
 </script>
 </body>
 </html>
