@@ -6,6 +6,6 @@
       "jquery-mobile":"",
       "bootstrap":"~2.3.0",
       "font-awesome":"",
-      "google-code-prettify":""
+      "angular":""
   }
 }
