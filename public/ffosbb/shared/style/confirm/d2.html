@@ -11,6 +11,7 @@
 <!--[if IE 7]>
   <link rel="stylesheet" href="/public/lib/font-awesome/css/font-awesome-ie7.min.css">
 <![endif]-->
+  <link rel="stylesheet" href="../buttons.css">
   <link rel="stylesheet" href="../confirm.css">
   <style type="text/css">
     html, body {
@@ -35,7 +36,9 @@
     </header>
   </section>
   
-  <form role="dialog" data-type="confirm">
+  <button onclick="toggle(); return false;">Show</button>
+
+  <form role="dialog" data-type="confirm" onsubmit="return false;">
     <section>
       <h1>Confirmation</h1>
       <p>
@@ -50,5 +53,22 @@
       <button class="recommend">Yes</button>
     </menu>
   </form>
+
+<script type="text/javascript">
+act_menu = document.querySelector("form[data-type='confirm'] > menu");
+var max = act_menu.children.length;
+for (var i=0; i < max; i++) {
+  act_menu.children[i].addEventListener('click', function() { toggle() });
+}
+
+function toggle () {
+    menu = document.querySelector("form[data-type='confirm']");
+    if(menu.style.display === "block" || menu.style.display === "") {
+      menu.style.display = "none";
+    } else {
+      menu.style.display = "block";
+    }
+}
+</script>
 </body>
 </html>
