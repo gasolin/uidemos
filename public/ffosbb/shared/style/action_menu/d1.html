@@ -34,6 +34,8 @@
       <h1><i class="icon-eye-open"></i> Demo</h1>
     </header>
   </section>
+
+  <button onclick="toggle(); return false;">Show</button>
   
   <form role="dialog" data-type="action" onsubmit="return false;">
     <header> Title </header> <!-- this header is optional -->
@@ -44,5 +46,22 @@
       <button> Cancel </button>
     </menu>
   </form>
+
+<script type="text/javascript">
+act_menu = document.querySelector("form[data-type='action'] > menu");
+var max = act_menu.children.length;
+for (var i=0; i < max; i++) {
+  act_menu.children[i].addEventListener('click', function() { toggle() });
+}
+
+function toggle () {
+    menu = document.querySelector("form[data-type='action']");
+    if(menu.style.display === "block" || menu.style.display === "") {
+      menu.style.display = "none";
+    } else {
+      menu.style.display = "block";
+    }
+}
+</script>
 </body>
 </html>
