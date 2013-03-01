@@ -11,6 +11,7 @@
 <!--[if IE 7]>
   <link rel="stylesheet" href="/public/lib/font-awesome/css/font-awesome-ie7.min.css">
 <![endif]-->
+  <link rel="stylesheet" href="../buttons.css">
   <link rel="stylesheet" href="../edit_mode.css">
   <style type="text/css">
     html, body {
@@ -35,7 +36,9 @@
     </header>
   </section>
   
-  <form role="dialog" data-type="edit">
+  <button onclick="toggle(); return false;">Toggle</button>
+
+  <form role="dialog" data-type="edit" onsubmit="return false;">
     <section>
       <header>
         <button><span class="icon icon-close">close</span></button>
@@ -50,5 +53,19 @@
       <button>Delete selected</button>
     </menu>
   </form>
+
+<script type="text/javascript">
+act_menu = document.querySelector("form[data-type='edit']");
+act_menu.addEventListener('click', function() { toggle() });
+
+function toggle () {
+    menu = document.querySelector("form[data-type='edit']");
+    if(menu.style.display === "block" || menu.style.display === "") {
+      menu.style.display = "none";
+    } else {
+      menu.style.display = "block";
+    }
+}
+</script>
 </body>
 </html>
