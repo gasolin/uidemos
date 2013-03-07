@@ -1,5 +1,5 @@
 {
-    "version": "0.5.1",
+    "version": "0.6",
     "name": "UI Demos",
     "launch_path": "/public/ffosbb/index.html",
     "description": "Firefox OS Building Block Demos with Source. merge http://buildingfirefoxos.com/ and https://wiki.mozilla.org/Gaia/Design/BuildingBlocks",
@@ -12,27 +12,5 @@
         "url": "http://www.gasolin.idv.tw"
     },
     "installs_allowed_from": ["*"],
-    "default_locale": "en",
-    "_permissions":[
-      "contacts",
-      "settings"
-    ],
-    "_locals": {
-        "es": {
-            "description":"",
-            "developer": {
-                "url":""
-            }
-        },
-        "it": {
-            "description":"",
-            "developer": {
-                "url":""
-            }
-        }
-      }
-    },
-    "_orientation": "portrait, landscapt-secondary",
-    "_fullscreen": "true",
-    "_appcache_path":"/public/ffosbb/cache.manifest"
+    "default_locale": "en"
 }
