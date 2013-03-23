@@ -1,8 +1,8 @@
 {
-    "version": "0.7",
+    "version": "0.8.5",
     "name": "UI Demos",
     "launch_path": "/public/ffosbb/index.html",
-    "description": "Firefox OS Building Block Demos with Source. merge http://buildingfirefoxos.com/ and https://wiki.mozilla.org/Gaia/Design/BuildingBlocks",
+    "description": "Firefox OS Building Block Demos with Source. merge http://buildingfirefoxos.com/ and https://wiki.mozilla.org/Gaia/Design/BuildingBlocks , with offline support",
     "icons":{
         "64": "/public/ffosbb/icon64.png",
         "128": "/public/ffosbb/icon128.png"

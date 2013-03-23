@@ -1,10 +1,14 @@
 <!DOCTYPE html>
-<html>
+<html manifest="manifest.appcache">
 <head>
   <meta charset="utf-8">
+  <title>UI Demos</title>
+  <meta name="description" content="Firefox OS Building Blocks Demo webapp">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>FirefoxOS UI Demos</title>
+  <link rel="icon" href="/public/ffosbb/favicon.ico"  type="image/x-icon" />
+  <!--[if IE]><link rel="shortcut icon" href="/public/ffosbb/favicon.ico"  type="image/x-icon" /><![endif]-->
+  <link rel="apple-touch-icon-precomposed" href="/public/ffosbb/apple-touch-icon-precomposed.png" />
   <link rel="stylesheet" href="main.css">
   <link rel="stylesheet" type="text/css" href="shared/style/headers.css">
   <link rel="stylesheet" type="text/css" href="shared/style/lists.css">
@@ -76,33 +80,10 @@ body li[data-tag="D"]:after { background-color: blue; }
 		<li data-state="tagged" data-tag="D"><a href="shared/style/progress_activity/findex.html"><p><i class="icon-spinner"></i> Progress and Activity</p></a></li>
 	</ul>
 </section>
-<script type="text/javascript">
-//check if app is installed
-//var manifestUrl='http://ffos.ap01.aws.af.cm/public/ffosbb/manifest.webapp';
-var manifestUrl = location.href.substring(0, location.href.lastIndexOf('/'))+'/manifest.webapp';
-// alert(manifestUrl);
-if( navigator.mozApps != undefined ){
-var app_stat = navigator.mozApps.getSelf();
-app_stat.onsuccess = function() {
-	if (app_stat.result) {
-        //instsalled
-        // alert('installed');
-	} else {
-        // not installed
-        var app_install = navigator.mozApps.install(manifestUrl);
-        app_install.onsuccess = function() {
-          // alert('install success');
-        };
-        app_install.onerror = function() {
-          // alert('install fail');
-        };
-	}
-};
-app_stat.onerror = function() {
-	alert('Error checking installation status: '+ this.error.message);
-};
-}
-</script>
+
+<!-- App Install detection -->
+<script src="js/app_installer.js"></script>
+
 <script type="text/javascript">
 
   var _gaq = _gaq || [];

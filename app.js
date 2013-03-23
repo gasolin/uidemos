@@ -15,9 +15,12 @@ app.configure(function(){
     app.set('view options', { layout: false });
     app.set('view cache', false);
 
-    // static
-    app.use("/public", express.static(__dirname+'/public'));
-    app.use("/public/lib", express.static(__dirname+'/components'));
+    // gzip
+    app.use(express.compress());
+    // static files, cached and expire in 30 days
+    app.use("/public", express.static(__dirname+'/public', {maxAge:2592000000}));
+    // link to bower components
+    // app.use("/public/lib", express.static(__dirname+'/components'));
 
     // mime
     express.static.mime.define({'application/x-web-app-manifest+json': ['webapp']});

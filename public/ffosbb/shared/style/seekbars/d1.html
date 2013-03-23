@@ -17,11 +17,9 @@
       margin: 0;
       padding: 0;
       font-size: 10px;
+      background-color: #fff;
     }
-
-    body {
-      background: #fff;
-    }
+    body { background: none; }
 
     h2.bb-docs {
       font-size: 1.8rem;
@@ -34,9 +32,9 @@
       border: solid 1px #e8e8e8;
     }
 
-    body[role="application"] section[role="region"]{
+    body[role="application"] section[role="region"] {
       background: #fff;
-      padding: 2rem;
+      /*padding: 2rem;*/
     }
 
     body[role="application"] section[role="region"] button {
@@ -74,7 +72,7 @@
   </section>
 
   <h2 class="bb-docs">Value seeker</h2>
-  <section role="region">
+  <section role="region" class="bar">
     <div role="slider" aria-valuemin="0" aria-valuenow="80" aria-valuemax="100" aria-valuetext="slider description">
       <label>0</label>
       <label>100</label>
