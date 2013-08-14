@@ -15,10 +15,10 @@ module.exports = function(grunt) {
     manifest: {
       generate: {
         options: {
-          // basePath: "../",
+          basePath: "./public/ffosbb/",
           // # Explicitly cached 'master entries'
           // cache: ["js/app.js", "css/style.css"],
-          cachePrefix: "/",
+          // cachePrefix: "",
           // # Resources that require the user to be online.
           // network: ["http://*", "https://*"],
           // # served if '/' is inaccessible
@@ -29,23 +29,24 @@ module.exports = function(grunt) {
           timestamp: true
         },
         src: [
-            "public/ffosbb/*.html",
-            "public/ffosbb/*.png",
-            "public/ffosbb/*.css",
-            "public/img/*.png",
-            "public/img/*.jpg",
-            "public/ffosbb/shared/style/*.css",
-            "public/ffosbb/shared/style/**.html",
-            "public/ffosbb/shared/style/**/images/ui/*.png",
-            "public/ffosbb/shared/style/**/images/icons/*.png",
-            "public/lib/prettify/*.js",
-            "public/lib/prettify/*.css",
-            "public/lib/font-awesome/css/*.css",
-            "public/lib/font-awesome/font/*.eot",
-            "public/lib/font-awesome/font/*.svg",
-            "public/lib/font-awesome/font/*.ttf",
-            "public/lib/font-awesome/font/*.woff",
-            "public/lib/font-awesome/font/*.otf"
+            "*.ico",
+            "*.png",
+            "*.html",
+            "*.css",
+            "../img/*.png",
+            "../img/*.jpg",
+            "shared/style/*.css",
+            "shared/style/**.html",
+            "shared/style/**/images/ui/*.png",
+            "shared/style/**/images/icons/*.png",
+            "../lib/prettify/*.js",
+            "../lib/prettify/*.css",
+            "../lib/font-awesome/css/*.css",
+            "../lib/font-awesome/font/*.eot",
+            "../lib/font-awesome/font/*.svg",
+            "../lib/font-awesome/font/*.ttf",
+            "../lib/font-awesome/font/*.woff",
+            "../lib/font-awesome/font/*.otf"
         ],
         dest: "public/ffosbb/manifest.appcache"
       }
