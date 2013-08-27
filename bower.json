@@ -1,0 +1,19 @@
+{
+  "name": "UIDemos",
+  "version": "1.0.0",
+  "homepage": "https://github.com/gasolin/webapplate",
+  "authors": [
+    "gasolin <gasolin@gmail.com>"
+  ],
+  "description": "webapplate",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components"
+  ],
+  "dependencies": {
+    "buildingblocks": "*",
+    "font-awesome": "~3.2.1"
+  }
+}
